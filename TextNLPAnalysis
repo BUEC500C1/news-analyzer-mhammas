@@ -1,3 +1,12 @@
+{
+Paragraph:
+ID 'recorderfile/example_file',
+TEXT,
+Keywords [],
+sentiments
+}
 
-API Type: 
-Procedure -> Return Stuff 
+Actions:
+
+FindKeywords(text, output)
+FindSentiment(text, output)
