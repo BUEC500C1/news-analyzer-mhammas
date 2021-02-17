@@ -1,0 +1,18 @@
+Uploaded a file. Converted it to text. 
+API Type: Entity Based
+
+Event:
+File Upload
+File Converted to Text
+Send Error Message
+
+Logs:
+File Uploaded Percentage
+File Type: doc/pdf
+
+Warning:
+
+Errors:
+Text Conversion Failed
+User cannot upload file
+User cannot convert
