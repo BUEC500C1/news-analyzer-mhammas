@@ -1,4 +1,3 @@
-
 def create(File Filename(s)):
   CreateEvent(UPLOAD_EVENT, timestamp)
   if(filename == NULL){
