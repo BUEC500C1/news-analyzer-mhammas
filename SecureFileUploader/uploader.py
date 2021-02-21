@@ -1,22 +1,25 @@
-def create(File Filename(s)):
-  CreateEvent(UPLOAD_EVENT, timestamp)
-  if(filename == NULL){
-    log(info, "No Filename Provided")
-    SendError
-  }
-  log(info, "File OK")
-  record.filename = Filename
-  record.id = '/file/12345'
-  record.URL = 'hardcoded_URL.com'
-  record.text = 'EXAMPLE TEXT'
+def create(filename):
+  #CreateEvent(UPLOAD_EVENT, timestamp)
+  if(filename == NULL):
+    #log(info, "No Filename Provided")
+    #SendError
+    break
+
+  #log(info, "File OK")
+  #record.filename = Filename
+  #record.id = '/file/12345'
+  #record.URL = 'hardcoded_URL.com'
+  #record.text = 'EXAMPLE TEXT'
   
-  return success
+  return 200
 
 def delete(record):
-  CreateEvent(DELETE_EVENT, timestamp)
-  log(info, "Delete Part of The File")
+  #CreateEvent(DELETE_EVENT, timestamp)
+  #log(info, "Delete Part of The File")
   #Delete part of file
+  return 200
 
 
-def update(text):
-  record.text = text
+def update(record, text):
+  #record.text = text
+  return 200
