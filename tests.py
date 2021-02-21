@@ -1,6 +1,6 @@
-from NewsfeedIngestor import * # import functions from other files
-from SecureFileUploader import * # import functions from other files
-from TextNLPAnalysis import * # import functions from other files
+from NewsfeedIngestor.ingestor import * # import functions from other files
+from SecureFileUploader.uploader import * # import functions from other files
+from TextNLPAnalysis.nlp import * # import functions from other files
 
 def test_create():
     assert create('test_filename') == 200
