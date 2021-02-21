@@ -1,6 +1,6 @@
 def create(filename):
   #CreateEvent(UPLOAD_EVENT, timestamp)
-  if(filename == NULL):
+  if(filename is None):
     #log(info, "No Filename Provided")
     #SendError
     break
