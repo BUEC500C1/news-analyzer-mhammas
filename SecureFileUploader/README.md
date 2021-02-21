@@ -11,9 +11,9 @@ An API to upload files(.pdf, .docx etc) and have them converted into text format
 
 ## Entity Structure
 
-FILE_ID
-URL_STORED
-PROCESSED_TEXT
+- FILE_ID
+- URL_STORED
+- PROCESSED_TEXT
 
 {
   Paragraphs []
@@ -27,6 +27,6 @@ PROCESSED_TEXT
 
 ## Functions
 
-```create(filename)```: Create a Entity Record
-```delete(record)```: Delete a Entity Record
-```update(record, text)```: Update a Entity Record
+- ```create(filename)```: Create a Entity Record
+- ```delete(record)```: Delete a Entity Record
+- ```update(record, text)```: Update a Entity Record
