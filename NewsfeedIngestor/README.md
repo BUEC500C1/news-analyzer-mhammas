@@ -7,7 +7,7 @@ Procedural
 
 ## Purpose
 
-An API for an app user to discover content on the internet (e.g. looking for Super bowl). It supports searching by keyword.
+An API to discover content on the internet (e.g. looking for Super bowl). It supports searching by keyword.
 
 ## Implementation Details
 
