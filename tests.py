@@ -18,11 +18,8 @@ def test_update():
     assert update(None, None)["status"] == 404
 
 def test_sentiment():
-    assert get_sentiment('test_record', 1)["status"] == 200
-    assert get_sentiment('test_record', 0)["status"] == 404
-    assert get_sentiment('test_record', None)["status"] == 404
-    assert get_sentiment(None, 2)["status"] == 404  
-    assert get_sentiment(None, None)["status"] == 404
+    assert get_sentiment('test_text')["status"] == 200
+    assert get_sentiment(None)["status"] == 404
 
 def test_search_by_keyword():
     assert search_by_keyword('test_keyword')["status"] == 200
