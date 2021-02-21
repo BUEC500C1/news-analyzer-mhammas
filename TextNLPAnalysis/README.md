@@ -7,7 +7,7 @@ Procedural
 
 ## Purpose
 
-An API to discover perform nlp analysis (e.g. sentiment analysis) on a given text.
+An API to perform nlp analysis (e.g. sentiment analysis) on a given text.
 
 ## Implementation Details
 
