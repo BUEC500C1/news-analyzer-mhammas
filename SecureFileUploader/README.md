@@ -21,9 +21,9 @@ An API to upload files(.pdf, .docx etc) and have them converted into text format
 
 ## Events
 
-  File Upload: UPLOAD_EVENT
-  File Converted to Text (Processing): PROCESS_FILE_EVENT
-  Update Text for a File: UPDATE_TEXT_EVENT
+ -  File Upload: UPLOAD_EVENT
+ -  File Converted to Text (Processing): PROCESS_FILE_EVENT
+  - Update Text for a File: UPDATE_TEXT_EVENT
 
 ## Functions
 
