@@ -2,12 +2,13 @@
 # NewsFeed Ingestor
 
 ## API Type
+
 Procedural
 
-## Some Details
+## Purpose
 
 An API for an app user to discover content on the internet (e.g. looking for Super bowl). It supports searching by keyword.
 
-## Details
+## Implementation Details
 
 - The function ``search_by_keyword(keyword)`` in ``ingestor.py`` takes in a keyword argument to search the internet for related articles
