@@ -1,9 +1,9 @@
 def create(filename):
   #CreateEvent(UPLOAD_EVENT, timestamp)
   if(filename is None):
+    return 404
     #log(info, "No Filename Provided")
     #SendError
-    break
 
   #log(info, "File OK")
   #record.filename = Filename
