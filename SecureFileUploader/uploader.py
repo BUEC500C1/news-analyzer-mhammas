@@ -8,10 +8,10 @@ def create(filename):
 
   filename = str(filename)
   record = {}
-  record.filename = filename
-  record.id = '/file/12345'
-  record.URL = 'hardcoded_URL.com'
-  record.text = 'EXAMPLE TEXT'
+  record["filename"] = filename
+  record["id"] = '/file/12345'
+  record["URL"] = 'hardcoded_URL.com'
+  record["text"] = 'EXAMPLE TEXT'
   
   logging.info("File Ok")
 
