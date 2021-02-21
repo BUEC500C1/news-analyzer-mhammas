@@ -4,6 +4,9 @@ def get_sentiment(record, paragraph):
 	if record is None:
 		logging.info("Record Not Found")
 		return {"status": 404, "message": "Record Not Found"}
+	if paragraph is None:
+		logging.info("Paragraph Not Found")
+		return {"status": 404, "message": "Paragraph Not Found"}
 	if paragraph < 1:
 		logging.info("Wrong Paragraph Number")
 		return {"status": 404, "message": "Wrong Paragraph Number"}

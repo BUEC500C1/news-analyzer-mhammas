@@ -2,9 +2,9 @@ import logging
 
 def create(filename):
   #CreateEvent(UPLOAD_EVENT, timestamp)
-  if(filename is None):
+  if filename is None:
     logging.info("No Filename Provided")
-  return {"status": 404, "message": "No Filename Provided"}
+    return {"status": 404, "message": "No Filename Provided"}
 
   filename = str(filename)
   record = {}
@@ -32,7 +32,7 @@ def update(record, text):
   if record is None:
     logging.info("Record Not Found")
     return {"status": 404, "message": "Record Not Found"}
-  if record is text:
+  if text is None:
     logging.info("Text Not Found")
     return {"status": 404, "message": "Text Not Found"}
   
