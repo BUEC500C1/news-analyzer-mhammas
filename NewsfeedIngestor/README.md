@@ -1,5 +1,13 @@
-An API for an app user to discover content on the internet. E.g. looking for Super bowl. In implementation, ill hide where I search it (like CNN, New York Times etc). For the API, the user knows I want content for Super Bowl.
 
-API Type: Procedural
+# NewsFeed Ingestor
 
-Returns a list of things
+## API Type
+Procedural
+
+## Some Details
+
+An API for an app user to discover content on the internet (e.g. looking for Super bowl). It supports searching by keyword.
+
+## Details
+
+- The function ``search_by_keyword(keyword)`` in ``ingestor.py`` takes in a keyword argument to search the internet for related articles
