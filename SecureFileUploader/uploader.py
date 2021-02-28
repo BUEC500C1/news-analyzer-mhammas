@@ -1,4 +1,9 @@
 import logging
+import PyPDF2
+from werkzeug import secure_filename
+import pymongo
+
+client = pymongo.MongoClient("mongodb+srv://admin:v4pxsDMf4q3kpwuY@cluster0.hduz6.mongodb.net/newsanalyzer?retryWrites=true&w=majority")
 
 def create(filename):
   #CreateEvent(UPLOAD_EVENT, timestamp)
@@ -6,13 +11,25 @@ def create(filename):
     logging.info("No Filename Provided")
     return {"status": 404, "message": "No Filename Provided"}
 
-  filename = str(filename)
+  filename.save(filename.filename)
+  pdfFileObj = open(filename.filename, 'rb')
+  pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+
   record = {}
-  record["filename"] = filename
-  record["id"] = '/file/12345'
-  record["URL"] = 'hardcoded_URL.com'
-  record["text"] = 'EXAMPLE TEXT'
-  
+  record["filename"] = filename.filename
+  #record["id"] = '/file/12345'
+  #record["URL"] = 'hardcoded_URL.com'
+  record["text"] = []
+
+  i = 0
+  while i < pdfReader.numPages:
+    pageObj = pdfReader.getPage(i)
+    record["text"].append(pageObj.extractText())
+    i+= 1
+
+  db = client.get_default_database()
+  files = db['files']
+  files.insert_one(record)
   logging.info("File Ok")
 
   return {"status": 200}
