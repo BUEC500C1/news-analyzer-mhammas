@@ -1,6 +1,6 @@
 import logging
 import PyPDF2
-from werkzeug import secure_filename
+#from werkzeug import secure_filename
 import pymongo
 
 client = pymongo.MongoClient("mongodb+srv://admin:v4pxsDMf4q3kpwuY@cluster0.hduz6.mongodb.net/newsanalyzer?retryWrites=true&w=majority")
