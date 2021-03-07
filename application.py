@@ -10,6 +10,14 @@ application = Flask(__name__)
 def main():
    return render_template('main.html')
 
+@application.route('/upload')
+def upload():
+   return render_template('upload.html')
+
+@application.route('/read')
+def read():
+    return read_records()
+
 @application.route('/create', methods = ['POST'])
 def create_file():
     #name = request.args.get("file")

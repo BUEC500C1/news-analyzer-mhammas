@@ -34,6 +34,22 @@ def create(filename):
 
   return {"status": 200}
 
+
+def read_records():
+  logging.info("Reading All Records")
+  db = client.get_default_database()
+  files = db['files']
+  cursor = files.find({})
+  docs = {}
+  i = 0
+  for document in cursor:
+    docs[i] = {}
+    docs[i]['filename'] = document['filename']
+    docs[i]['text'] = document['text']
+    i += 1
+  return docs
+
+
 def delete(record):
   if record is None:
     logging.info("Record Not Found")
