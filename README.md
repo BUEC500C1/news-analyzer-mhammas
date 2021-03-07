@@ -4,4 +4,20 @@ News Analyzer is an application designed to help journalists store, analyze and 
 
 # Secure File Uploader
 
+1. Main Screen
 
+![Alt text](./screens/main.png?raw=true "Title")
+
+2. Upload PDF
+
+![Alt text](./screens/upload.png?raw=true "Title")
+
+
+3. Returns success status
+
+![Alt text](./screens/status.png?raw=true "Title")
+
+
+4. Read Uploaded Files
+
+![Alt text](./screens/read.png?raw=true "Title")
