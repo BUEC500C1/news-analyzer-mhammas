@@ -36,21 +36,31 @@ def update_file():
     return update(name, text)
 
 @application.route('/sentiment')
+def sentiment():
+   return render_template('sentiment.html')
+
+
+@application.route('/sentiment/get_sentiment')
 def calculate_sentiment():
     text = request.args.get("text")
     return get_sentiment(text)
 
-@application.route('/entities')
+@application.route('/sentiment/get_entities')
 def calculate_entities():
     text = request.args.get("text")
     return get_entities(text)
 
-@application.route('/entitysentiment')
+@application.route('/sentiment/get_entitysentiment')
 def calculate_entitysentiment():
     text = request.args.get("text")
     return get_entities_and_sentiment(text)
 
-@application.route('/keyword_search')
+@application.route('/search')
+def search():
+   return render_template('search.html')
+
+
+@application.route('/search/keyword_search')
 def keyword_search():
     keyword = request.args.get("keyword")
     return search_by_keyword(keyword)
