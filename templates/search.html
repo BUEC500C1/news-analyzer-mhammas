@@ -8,6 +8,17 @@
          <input name = "keyword" />
          <input type = "submit"/>
       </form>   
+    {% if articles %}
+    <table class="table is-striped is-fullwidth">
+      {% for article in articles %}
+      <tr>
+        <td>
+          {{ article['URL'] }}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
    </body>
 </html>
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Your Records{% endblock %}
+{% block content %}
+    <h1 class="title">Records</h1>
+
+    {% if docs %}
+    <table class="table is-striped is-fullwidth">
+      {% for doc in docs %}
+      <tr>
+        <td>
+          {{ docs[doc]['filename'] }}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

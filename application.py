@@ -58,7 +58,8 @@ def upload():
 
 @application.route('/read')
 def read():
-    return read_records(session['username'])
+    docs = read_records(session['username'])
+    return render_template('records.html', docs=docs)
 
 @application.route('/create', methods = ['POST'])
 def create_file():
@@ -85,7 +86,8 @@ def sentiment():
 @application.route('/sentiment/get_sentiment')
 def calculate_sentiment():
     text = request.args.get("text")
-    return get_sentiment(text)
+    sentiment = get_sentiment(text)["sentiment"]
+    return render_template('sentiment.html', sentiment=sentiment)
 
 @application.route('/sentiment/get_entities')
 def calculate_entities():
@@ -105,7 +107,8 @@ def search():
 @application.route('/search/keyword_search')
 def keyword_search():
     keyword = request.args.get("keyword")
-    return search_by_keyword(keyword)
+    articles = search_by_keyword(keyword)["articles"]
+    return render_template('search.html', articles=articles)
 
 if __name__ == "__main__":
     application.run(debug=True)

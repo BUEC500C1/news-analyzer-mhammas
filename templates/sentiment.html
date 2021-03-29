@@ -8,6 +8,9 @@
          <input name = "text" />
          <input type = "submit"/>
       </form>   
+    {% if sentiment %}
+    <p>{{ sentiment }}</p>
+    {% endif %}
    </body>
 </html>
 {% endblock %}
