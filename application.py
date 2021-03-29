@@ -40,6 +40,16 @@ def calculate_sentiment():
     text = request.args.get("text")
     return get_sentiment(text)
 
+@application.route('/entities')
+def calculate_entities():
+    text = request.args.get("text")
+    return get_entities(text)
+
+@application.route('/entitysentiment')
+def calculate_entitysentiment():
+    text = request.args.get("text")
+    return get_entities_and_sentiment(text)
+
 @application.route('/keyword_search')
 def keyword_search():
     keyword = request.args.get("keyword")
