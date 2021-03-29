@@ -5,7 +5,27 @@ import pymongo
 
 client = pymongo.MongoClient("mongodb+srv://admin:v4pxsDMf4q3kpwuY@cluster0.hduz6.mongodb.net/newsanalyzer?retryWrites=true&w=majority")
 
-def create(filename):
+
+def signup_user(user, password):
+  db = client.get_default_database()
+  users = db['users']
+  cursor = users.find({})
+  for user_obj in cursor:
+    if user_obj['username'] == user:
+      return {"status": 404, "message": "Username already Taken"}
+  users.insert_one({'username': user, 'password': password})  
+  return {'status': 200}
+
+def login_user(user, password):
+  db = client.get_default_database()
+  users = db['users']
+  cursor = users.find({})
+  for user_obj in cursor:
+    if user_obj['username'] == user and user_obj['password'] == password:
+      return {"status": 200}
+  return {"status": 404, "message": "User not found"}
+
+def create(user, filename):
   #CreateEvent(UPLOAD_EVENT, timestamp)
   if filename is None:
     logging.info("No Filename Provided")
@@ -17,8 +37,7 @@ def create(filename):
 
   record = {}
   record["filename"] = filename.filename
-  #record["id"] = '/file/12345'
-  #record["URL"] = 'hardcoded_URL.com'
+  record["user"] = user
   record["text"] = []
 
   i = 0
@@ -35,7 +54,7 @@ def create(filename):
   return {"status": 200}
 
 
-def read_records():
+def read_records(user):
   logging.info("Reading All Records")
   db = client.get_default_database()
   files = db['files']
@@ -43,10 +62,11 @@ def read_records():
   docs = {}
   i = 0
   for document in cursor:
-    docs[i] = {}
-    docs[i]['filename'] = document['filename']
-    docs[i]['text'] = document['text']
-    i += 1
+    if document['user'] == user:
+      docs[i] = {}
+      docs[i]['filename'] = document['filename']
+      docs[i]['text'] = document['text']
+      i += 1
   return docs
 
 

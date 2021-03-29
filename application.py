@@ -1,14 +1,56 @@
-from flask import Flask, escape, render_template, request
+from flask import Flask, escape, render_template, request, redirect, url_for, session
 from NewsfeedIngestor.ingestor import * # import functions from other files
 from SecureFileUploader.uploader import * # import functions from other files
 from TextNLPAnalysis.nlp import * # import functions from other files
 
 application = Flask(__name__)
+application.secret_key = '218401824021809421840128094812094809'
 
 @application.route('/')
 @application.route('/index')
+def index():
+   return render_template('signup.html')
+
+@application.route('/signup')
+def signup():
+   return render_template('signup.html')
+
+@application.route('/login')
+def login():
+   return render_template('login.html')
+
+@application.route('/signup_post', methods = ['POST'])
+def signup_post():
+    name = request.form.get("name")
+    password = request.form.get("password")
+    retVal = signup_user(name, password)
+    if retVal['status'] == 200:
+        return redirect(url_for('login_post'), code=307)
+    else:
+        return redirect(url_for('signup'))
+
+@application.route('/login_post', methods = ['POST'])
+def login_post():
+    name = request.form.get("name")
+    password = request.form.get("password")
+    retVal = login_user(name, password)
+    if retVal['status'] == 200:
+        session['username'] = name
+        return redirect(url_for('main'))
+    else:
+        return redirect(url_for('login'))
+
+@application.route('/main')
 def main():
-   return render_template('main.html')
+    if 'username' in session:
+        return render_template('main.html')
+    else:
+        return redirect(url_for('index'))
+
+@application.route('/logout')
+def logout():   
+    session.pop('username', default=None)
+    return redirect(url_for('index'))
 
 @application.route('/upload')
 def upload():
@@ -16,13 +58,13 @@ def upload():
 
 @application.route('/read')
 def read():
-    return read_records()
+    return read_records(session['username'])
 
 @application.route('/create', methods = ['POST'])
 def create_file():
     #name = request.args.get("file")
     f = request.files['file']
-    return create(f)
+    return create(session['username'], f)
 
 @application.route('/delete')
 def delete_file():
