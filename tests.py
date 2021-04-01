@@ -21,6 +21,10 @@ def test_sentiment():
     assert get_sentiment('test_text')["status"] == 200
     assert get_sentiment(None)["status"] == 404
 
+def test_entities():
+    assert get_entities('test_text')["status"] == 200
+    assert get_entities(None)["status"] == 404
+ 
 def test_search_by_keyword():
     assert search_by_keyword('test_keyword')["status"] == 200
     assert search_by_keyword(None)["status"] == 404
