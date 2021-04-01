@@ -29,10 +29,12 @@ An API to upload files(.pdf, .docx etc) and have them converted into text format
 
 ## Functions
 
-- ```create(filename)```: Create a Entity Record
-- ```delete(record)```: Delete a Entity Record
-- ```update(record, text)```: Update a Entity Record
-- ```read()```: Reads Entity Record
+- ```create(user, filename)```: Create a Entity Record
+- ```delete(user, record)```: Delete a Entity Record
+- ```update(user, record, text)```: Update a Entity Record
+- ```read(user)```: Reads Entity Record
 
-
-Also contains functionality for User Authentication
+## User Authentication
+- ```signup(user, password)```: Signs up the user
+- ```login(user, password)```: Logs in the user
+- ```logout()```: Logsout the user
