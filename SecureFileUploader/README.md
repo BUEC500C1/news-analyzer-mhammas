@@ -37,4 +37,3 @@ An API to upload files(.pdf, .docx etc) and have them converted into text format
 ## User Authentication
 - ```signup(user, password)```: Signs up the user
 - ```login(user, password)```: Logs in the user
-- ```logout()```: Logsout the user
