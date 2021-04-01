@@ -33,3 +33,6 @@ An API to upload files(.pdf, .docx etc) and have them converted into text format
 - ```delete(record)```: Delete a Entity Record
 - ```update(record, text)```: Update a Entity Record
 - ```read()```: Reads Entity Record
+
+
+Also contains functionality for User Authentication
