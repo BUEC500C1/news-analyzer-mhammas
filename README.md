@@ -8,6 +8,7 @@ News Analyzer is an application designed to help journalists store, analyze and 
 - Amazon Elastic Beanstalk for hosting site (taken the link down because free-tier ended)
 - NyTimes API for Newsfeed Ingestor
 - Google Language API for sentiment analysis
+- All Tests pass locally
 
 # Screenshots
 
