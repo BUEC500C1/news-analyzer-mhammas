@@ -70,15 +70,23 @@ def read_records(user):
   return docs
 
 
-def delete(record):
-  if record is None:
+def delete(username, filename):
+  if filename is None:
     logging.info("Record Not Found")
     return {"status": 404, "message": "Record Not Found"}
-  #add consideration for non-existing record
-  #CreateEvent(DELETE_EVENT, timestamp)
-  logging.info("Delete Part of The File")
-  #Delete part of file
-  return {"status": 200}
+  db = client.get_default_database()
+  files = db['files']
+  cursor = files.find({})
+  
+  for document in cursor:
+    if document['user'] == username and str(document["filename"]) == str(filename):
+      db['files'].remove(document)
+      logging.info("Delete The File")
+      return {"status": 200}
+  
+  logging.info("Record Not Found")
+  return {"status": 404, "message": "Record Not Found"}
+
 
 
 def update(record, text):

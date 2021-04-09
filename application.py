@@ -69,8 +69,9 @@ def create_file():
 
 @application.route('/delete')
 def delete_file():
-    name = request.args.get("file")
-    return delete(name)
+    username = request.args.get("username")
+    filename = request.args.get("filename")
+    return delete(username, filename)
 
 @application.route('/update')
 def update_file():
