@@ -12,7 +12,7 @@ News Analyzer is an application designed to help journalists store, analyze and 
 
 # Video
 
-Video of most functions cans be found in the /video directory
+Video of most functions can be found in the /video directory
 
 # Screenshots
 
