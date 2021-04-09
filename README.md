@@ -10,6 +10,10 @@ News Analyzer is an application designed to help journalists store, analyze and 
 - Google Language API for sentiment analysis
 - All Tests pass locally
 
+# Video
+
+Video of most functions cans be found in the /video directory
+
 # Screenshots
 
 1. Main/Signup Page 
