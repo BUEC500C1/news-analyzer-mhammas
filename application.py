@@ -4,7 +4,7 @@ from SecureFileUploader.uploader import * # import functions from other files
 from TextNLPAnalysis.nlp import * # import functions from other files
 
 application = Flask(__name__)
-application.secret_key = '218401824021809421840128094812094809'
+\application.secret_key = 'ADD_SECRET_KEY_HERE'
 
 @application.route('/')
 @application.route('/index')
