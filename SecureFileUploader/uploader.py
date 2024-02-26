@@ -3,7 +3,7 @@ import PyPDF2
 #from werkzeug import secure_filename
 import pymongo
 
-client = pymongo.MongoClient("mongodb+srv://admin:v4pxsDMf4q3kpwuY@cluster0.hduz6.mongodb.net/newsanalyzer?retryWrites=true&w=majority")
+client = pymongo.MongoClient("ADD API KEY HERE")
 
 
 def signup_user(user, password):
